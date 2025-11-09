@@ -29,15 +29,12 @@ public class Main {
         calculateTotalSale(saleWithProducts);
         System.out.println(" The 'totalSalePrice' in 'saleWithProducts' -> " + saleWithProducts.getTotalSalePrice());
 
-        // IndexOutOfBoundsException  TODO para salir del indice por estar fuera de rango
-        /*
-            public void calculateTotalSale() {
+        System.out.println("\n -- Using 'IndexOutOfBoundsException' --");
         try {
-            innerCalculateTotal();
-        } catch (SaleEmptyException e) {
-            System.out.println("ERROR : " + e.getMessage());
+            for (int i = 0; i < 10; i++)
+                System.out.println("- i = " + i + " , " + saleWithProducts.getProductInfoByIndex(i));
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println(e.getMessage());
         }
-    }
-         */
     }
 }

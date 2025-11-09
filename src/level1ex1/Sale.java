@@ -19,6 +19,10 @@ public class Sale {
         return totalSalePrice;
     }
 
+    public String getProductInfoByIndex(int index){
+        return ( productCollection.get(index).toString());
+    }
+
     public  void calculateTotal() throws SaleEmptyException{
         if (productCollection.isEmpty())
             throw new SaleEmptyException("To make a sale you first have to add products");
