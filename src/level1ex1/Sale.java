@@ -6,18 +6,6 @@ public class Sale {
     private ArrayList<Product> productCollection;
     private Double totalSalePrice;
 
-    private  void innerCalculateTotal() throws SaleEmptyException{
-        /*
-        if (productCollection.isEmpty())
-            throw new SaleEmptyException("To make a sale you first have to add products");
-         */
-        try {
-            for (Product product : productCollection) totalSalePrice += product.getPrice();
-        } catch (IndexOutOfBoundsException e){
-            throw new SaleEmptyException("To make a sale you first have to add products");
-        }
-    }
-
     public Sale(){
         this.productCollection = new ArrayList<>();
         this.totalSalePrice = 0.0;
@@ -31,11 +19,10 @@ public class Sale {
         return totalSalePrice;
     }
 
-    public void calculateTotalSale() {
-        try {
-            innerCalculateTotal();
-        } catch (SaleEmptyException e) {
-            System.out.println("ERROR : " + e.getMessage());
-        }
+    public  void calculateTotal() throws SaleEmptyException{
+        if (productCollection.isEmpty())
+            throw new SaleEmptyException("To make a sale you first have to add products");
+        for (Product product : productCollection) totalSalePrice += product.getPrice();
     }
+
 }
