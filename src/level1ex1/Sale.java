@@ -7,9 +7,15 @@ public class Sale {
     private Double totalSalePrice;
 
     private  void innerCalculateTotal() throws SaleEmptyException{
+        /*
         if (productCollection.isEmpty())
             throw new SaleEmptyException("To make a sale you first have to add products");
-        for (Product product : productCollection) totalSalePrice += product.getPrice();
+         */
+        try {
+            for (Product product : productCollection) totalSalePrice += product.getPrice();
+        } catch (IndexOutOfBoundsException e){
+            throw new SaleEmptyException("To make a sale you first have to add products");
+        }
     }
 
     public Sale(){
