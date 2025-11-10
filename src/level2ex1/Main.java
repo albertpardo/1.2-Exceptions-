@@ -33,13 +33,25 @@ public class Main {
         input = Input.readDouble("Enter a double (use '.' for put decimal part. Example : \"10.58\": ");
         System.out.println("Your input is : " + input + "\n");
     }
+
+    private static void readCharCheck(){
+        char input;
+
+        System.out.println("--- Char part ---");
+        input = Input.readChar("Enter a char : ");
+        System.out.println("Your input is : " + input + "\n");
+    }
+
     public static void main(String args[]){
         /*
         readByteCheck();
         readIntCheck();
         readFloatCheck();
+        readDoubleCheck();
 
          */
-        readDoubleCheck();
+        readCharCheck();
+
+
     }
 }

@@ -36,7 +36,7 @@ public class Input {
                 inputInt = scanner.nextInt();
                 goodInput = true;
             } catch (InputMismatchException e) {
-                System.out.println("- EXCEPTION : It's no an int [" + e + "].");
+                System.err.println("- EXCEPTION : It's no an int [" + e + "].");
             }
             scanner.nextLine();
         }
@@ -53,7 +53,7 @@ public class Input {
                 inputFloat = scanner.nextFloat();
                 goodInput = true;
             } catch (InputMismatchException e) {
-                System.out.println("- EXCEPTION : It's no float [" + e + "].");
+                System.err.println("- EXCEPTION : Format Error. It's no float [" + e + "].");
             }
             scanner.nextLine();
         }
@@ -70,7 +70,7 @@ public class Input {
                 inputDouble = scanner.nextDouble();
                 goodInput = true;
             } catch (InputMismatchException e) {
-                System.out.println("- EXCEPTION : It's no double [" + e + "].");
+                System.err.println("- EXCEPTION : Format Error. It's no double [" + e + "].");
             }
             scanner.nextLine();
         }
@@ -78,11 +78,31 @@ public class Input {
     }
 
     // personalException
-    public static char readChar(String message) throws personalException{
-        return '2';
+    public static char readChar(String message) throws PersonalException {
+        char inputChar = '\0';
+        boolean goodInput = false;
+
+        while (!goodInput) {
+            try {
+                String inputString;
+
+                System.out.println(message);
+                inputString = scanner.nextLine();
+                if (inputString.length() == 1) {
+                    inputChar = inputString.charAt(0);
+                    goodInput = true;
+                }
+                else
+                    throw new PersonalException("No valid input as char");
+            } catch (PersonalException e) {
+                System.err.println("- EXCEPTION : It's not a char [" + e + "].");
+            }
+        }
+
+        return inputChar;
     }
 
-    public static String readString(String message) throws personalException{
+    public static String readString(String message) throws PersonalException {
         return "2";
     }
 
