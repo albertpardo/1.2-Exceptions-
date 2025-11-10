@@ -63,16 +63,13 @@ public class Main {
     }
 
     public static void main(String args[]){
-        /*
+
         readByteCheck();
         readIntCheck();
         readFloatCheck();
         readDoubleCheck();
         readCharCheck();
         readStringCheck();
-         */
         readYesNoCheck();
-
-
     }
 }
