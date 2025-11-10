@@ -123,6 +123,25 @@ public class Input {
     }
 
     public static boolean readYesNo(String message) {
-        return false;
+        boolean inputBool = false;
+        char inputChar = '\n';
+        boolean goodInput = false;
+
+        while (!goodInput) {
+            try {
+                String inputLine;
+
+                inputChar = readChar(message);
+                if (inputChar == 'y')
+                    inputBool = true;
+                else
+                    throw new PersonalException("Your input isn't 'y' or 'n'.");
+                goodInput = true;
+            } catch (PersonalException e) {
+                System.err.println("- EXCEPTION : No valid input '" + inputChar + "' [" + e + "].");
+            }
+        }
+
+        return inputBool;
     }
 }

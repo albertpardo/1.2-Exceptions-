@@ -50,6 +50,18 @@ public class Main {
         System.out.println("Your input is : " + input + "\n");
     }
 
+    private static void readYesNoCheck(){
+        boolean input;
+
+        System.out.println("--- Boolean part ---");
+        input = Input.readYesNo("Answer (y/n): ");
+        System.out.print("Your input is : ");
+        if (input)
+            System.out.println("'y'\n");
+        else
+            System.out.println("'n'\n");
+    }
+
     public static void main(String args[]){
         /*
         readByteCheck();
