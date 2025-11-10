@@ -14,13 +14,32 @@ public class Main {
         int input;
 
         System.out.println("--- Int part ---");
-        input = Input.readInt("Enter a integer [ range -2147483648 to 2147483647 ]");
+        input = Input.readInt("Enter a integer [ range -2147483648 to 2147483647 ]: ");
         System.out.println("Your input is : " + input + "\n");
     }
 
+    private static void readFloatCheck() {
+        float input;
+
+        System.out.println("--- Float part ---");
+        input = Input.readFloat("Enter a float (use '.' for put decimal part. Example : \"4.5\"): ");
+        System.out.println("Your input is : " + input + "\n");
+    }
+
+    private static void readDoubleCheck(){
+        double input;
+
+        System.out.println("--- Double part ---");
+        input = Input.readDouble("Enter a double (use '.' for put decimal part. Example : \"10.58\": ");
+        System.out.println("Your input is : " + input + "\n");
+    }
     public static void main(String args[]){
+        /*
         readByteCheck();
         readIntCheck();
+        readFloatCheck();
 
+         */
+        readDoubleCheck();
     }
 }

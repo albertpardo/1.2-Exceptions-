@@ -4,9 +4,11 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Input {
+    private static Scanner scanner = new Scanner(System.in);
+
     //InputMismatchException
     public static byte readByte(String message) {
-        Scanner scanner = new Scanner(System.in);
+        //Scanner scanner = new Scanner(System.in);
         byte inputByte = 0;
         boolean goodInput = false;
 
@@ -20,20 +22,59 @@ public class Input {
             }
             scanner.nextLine();
         }
-        scanner.close();
         return inputByte;
     }
 
     public static int readInt(String message) {
-        return 0;
+        //Scanner scanner = new Scanner(System.in);
+        int inputInt = 0;
+        boolean goodInput = false;
+
+        while (!goodInput){
+            try {
+                System.out.println(message);
+                inputInt = scanner.nextInt();
+                goodInput = true;
+            } catch (InputMismatchException e) {
+                System.out.println("- EXCEPTION : It's no an int [" + e + "].");
+            }
+            scanner.nextLine();
+        }
+        return inputInt;
     }
 
     public static float readFloat(String message) {
-        return 0.0f;
+        float inputFloat = 0.0f;
+        boolean goodInput = false;
+
+        while (!goodInput) {
+            try {
+                System.out.println(message);
+                inputFloat = scanner.nextFloat();
+                goodInput = true;
+            } catch (InputMismatchException e) {
+                System.out.println("- EXCEPTION : It's no float [" + e + "].");
+            }
+            scanner.nextLine();
+        }
+        return inputFloat;
     }
 
     public static double readDouble(String message) {
-        return 0.0;
+        double inputDouble = 0.0f;
+        boolean goodInput = false;
+
+        while (!goodInput) {
+            try {
+                System.out.println(message);
+                inputDouble = scanner.nextDouble();
+                goodInput = true;
+            } catch (InputMismatchException e) {
+                System.out.println("- EXCEPTION : It's no double [" + e + "].");
+            }
+            scanner.nextLine();
+        }
+        return inputDouble;
     }
 
     // personalException
