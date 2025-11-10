@@ -25,9 +25,8 @@ Create a class named "Input." This class should be used to control the different
 
 The first step is to instantiate an object of the Scanner class and from there, create static methods to read different types of data from the keyboard.
 
-**Important**
-
-It is crucial that if any method throws an exception, we handle it and re-prompt the user until the data is entered correctly. For example: If a float is entered with a dot instead of a comma, it should display “Format error.” The prompt should continue until the user enters a properly formatted float.
+> **Important**
+>It is crucial that if any method throws an exception, we handle it and re-prompt the user until the data is entered correctly. For example: If a float is entered with a dot instead of a comma, it should display “Format error.” The prompt should continue until the user enters a properly formatted float.
 
 All methods receive a String with the message to be displayed to the user, for example: “Enter your age”, and return the appropriate data entered by the user in each method, for example: a byte with the user’s age.
 
