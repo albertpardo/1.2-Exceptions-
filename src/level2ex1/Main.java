@@ -42,15 +42,24 @@ public class Main {
         System.out.println("Your input is : " + input + "\n");
     }
 
+    private static void readStringCheck(){
+        String input;
+
+        System.out.println("--- String part ---");
+        input = Input.readString("Enter a String : ");
+        System.out.println("Your input is : " + input + "\n");
+    }
+
     public static void main(String args[]){
         /*
         readByteCheck();
         readIntCheck();
         readFloatCheck();
         readDoubleCheck();
-
-         */
         readCharCheck();
+        readStringCheck();
+         */
+        readYesNoCheck();
 
 
     }

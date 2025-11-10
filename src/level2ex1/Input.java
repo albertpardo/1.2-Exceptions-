@@ -98,12 +98,28 @@ public class Input {
                 System.err.println("- EXCEPTION : It's not a char [" + e + "].");
             }
         }
-
         return inputChar;
     }
 
     public static String readString(String message) throws PersonalException {
-        return "2";
+        String inputString = "";
+        boolean goodInput = false;
+
+        while (!goodInput) {
+            try {
+                String inputLine;
+
+                System.out.println(message);
+                inputString = scanner.next();
+                inputLine = scanner.nextLine();
+                if (inputLine.length() > 0)
+                    throw new PersonalException("Your input isn't a string.");
+                goodInput = true;
+            } catch (PersonalException e) {
+                System.err.println("- EXCEPTION : It's not a String [" + e + "].");
+            }
+        }
+        return inputString;
     }
 
     public static boolean readYesNo(String message) {
