@@ -22,7 +22,7 @@ public class Main {
         float input;
 
         System.out.println("--- Float part ---");
-        input = Input.readFloat("Enter a float (use '.' for put decimal part. Example : \"4.5\"): ");
+        input = Input.readFloat("Enter a float (Depending on Regional Configuration in your system, you might need to enter '.' or ',' . Examples : \"4.5\" or \"4,5\" (depending on your System' Regional Configuration)");
         System.out.println("Your input is : " + input + "\n");
     }
 
@@ -30,7 +30,7 @@ public class Main {
         double input;
 
         System.out.println("--- Double part ---");
-        input = Input.readDouble("Enter a double (use '.' for put decimal part. Example : \"10.58\": ");
+        input = Input.readDouble("Enter a double (Depending on Regional Configuration in your system, you might need to enter '.' or ',' . Examples : \"4.5\" or \"4,5\" (depending on your System' Regional Configuration)");
         System.out.println("Your input is : " + input + "\n");
     }
 

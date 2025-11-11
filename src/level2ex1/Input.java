@@ -61,7 +61,7 @@ public class Input {
     }
 
     public static double readDouble(String message) {
-        double inputDouble = 0.0f;
+        double inputDouble = 0.0d;
         boolean goodInput = false;
 
         while (!goodInput) {
@@ -112,7 +112,7 @@ public class Input {
                 System.out.println(message);
                 inputString = scanner.next();
                 inputLine = scanner.nextLine();
-                if (inputLine.length() > 0)
+                if (!inputLine.isEmpty())
                     throw new PersonalException("Your input isn't a string.");
                 goodInput = true;
             } catch (PersonalException e) {
@@ -124,7 +124,7 @@ public class Input {
 
     public static boolean readYesNo(String message) {
         boolean inputBool = false;
-        char inputChar = '\n';
+        char inputChar = ' ';
         boolean goodInput = false;
 
         while (!goodInput) {
@@ -134,6 +134,8 @@ public class Input {
                 inputChar = readChar(message);
                 if (inputChar == 'y')
                     inputBool = true;
+                else if (inputChar == 'n')
+                     inputBool = false;
                 else
                     throw new PersonalException("Your input isn't 'y' or 'n'.");
                 goodInput = true;
